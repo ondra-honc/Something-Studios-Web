@@ -1,0 +1,95 @@
+:root
+{
+    --bg: #CADBC0;
+    --text-color: #000;
+    --header-bg: #A27E6F;
+    --text-hover: #894862;
+    --header-separation-line: #1a0516;
+    --button-text: #FFF;
+    --button-border: #583535;
+}
+
+body
+{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+*
+{
+    font-family: "New Rocker", system-ui;
+}
+
+header
+{
+    height: 11rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--header-bg);
+    border-bottom: 4px solid var(--header-separation-line);
+}
+
+.navbar
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 10rem; 
+    box-sizing: border-box;
+}
+
+a img[src*="Logo"] {
+    background: none;
+    background-color: transparent;
+}
+
+.wrapper
+{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.wrapper > a
+{
+    color: inherit;    
+    text-decoration: none;   
+    background: transparent;
+    font-size: 1.5rem;
+    transition: all 0.1s ease-in;
+}
+
+.wrapper > a:not(#collaboration):hover
+{
+    color: var(--text-hover);
+    transform: translateY(-2px);
+}
+
+#collaboration
+{
+    background-color: var(--text-hover);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 0 2px var(--button-border);
+    color: var(--button-text);
+}
+
+#collaboration:hover
+{
+    color: var(--button-text);
+    transform: scale(0.95);
+}
