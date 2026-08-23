@@ -34,7 +34,7 @@ button {
 
 header
 {
-    height: 11rem;
+    height: 7rem;
     display: flex;
     align-items: center;
     background-color: var(--header-bg);
