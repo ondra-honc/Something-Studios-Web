@@ -1,6 +1,6 @@
 async function loadTemplate() {
     try {
-        const response = await fetch('./layout.html');
+        const response = await fetch('/layout.html');
         if (!response.ok) throw new Error(`HTTP error status: ${response.status}`);
         const htmlText = await response.text();
 
