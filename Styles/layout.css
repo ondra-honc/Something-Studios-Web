@@ -112,6 +112,7 @@ footer
     height: 15rem;
     background-color: var(--footer-bg);
     gap: 15px;
+    border-top: 2px solid var(--header-separation-line);
 }
 
 .left-part > a
