@@ -1,1 +1,6 @@
-document.getElementById("year").textContent = new Date().getFullYear();
+window.addEventListener('layoutLoaded', () => {
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear().toString();
+    }
+});
