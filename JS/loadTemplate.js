@@ -4,10 +4,7 @@ async function loadTemplate() {
         const isGitHub = window.location.hostname.endsWith('github.io');
         const basePrefix = (isGitHub && pathSegments.length > 0) ? `/${pathSegments[0]}` : '';
 
-        const response = await fetch(`${basePrefix}/layout.html`);  
-
-        console.log(`${basePrefix}/layout.html`);
-
+        const response = await fetch(`${basePrefix}/layout.html`);
         if (!response.ok) throw new Error(`HTTP error status: ${response.status}`);
         const htmlText = await response.text();
 
@@ -16,7 +13,7 @@ async function loadTemplate() {
 
         const headerTemplate = layoutDoc.querySelector('#header');
         const footerTemplate = layoutDoc.querySelector('#footer');
-        
+
         const processFragment = (template) => {
             const clone = template.content.cloneNode(true);
             if (basePrefix) {
@@ -40,12 +37,12 @@ async function loadTemplate() {
 
         if (headerTemplate) {
             const headerContainer = document.getElementById('site-header');
-            headerContainer?.replaceWith(headerTemplate.content.cloneNode(true));
+            headerContainer?.replaceWith(processFragment(headerTemplate));
         }
-        
+
         if (footerTemplate) {
             const footerContainer = document.getElementById('site-footer');
-            footerContainer?.replaceWith(footerTemplate.content.cloneNode(true));
+            footerContainer?.replaceWith(processFragment(footerTemplate));
             window.dispatchEvent(new CustomEvent('layoutLoaded'));
         }
     } catch (error) {
