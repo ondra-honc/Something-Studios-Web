@@ -165,6 +165,9 @@ footer
 
 .left-part
 {
+    display: flex;
+    flex-direction: column;
+
     & > a
     {
         font-family: inherit;
@@ -174,7 +177,9 @@ footer
 
 .page-links, .game-links
 {
+    display: flex;
     color: var(--unhover-text-color);
+    gap: 5px;
 
     & > a
     {
@@ -207,10 +212,9 @@ footer
 
 #hamburger 
 {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
-    display: none;
 }
 
 @media (width <= 1100px)
@@ -254,5 +258,51 @@ footer
         flex-direction: column;
         height: auto;
         padding: 2rem 0;
+    }
+
+    .left-part, .page-links, .game-links
+    {
+        justify-content: center;
+        align-items: center;
+
+        & > p
+        {
+            text-align: center;
+        }
+    }
+}
+
+@media (width <= 580px)
+{
+    header
+    {
+        height: auto;
+    }
+
+    .navbar
+    {
+        padding: 0 1rem;
+    }
+    
+    #logo img
+    {
+        width: 200px;
+        height: auto;
+        content: url(/Logos/Main\ Logo-cropped.svg);
+    }
+}
+
+@media (width <= 360px)
+{
+    .left-part img
+    {
+        width: 200px;
+        height: auto;
+        content: url(/Logos/Main\ Logo-cropper-inverted.svg);
+    }
+
+    .page-links, .game-links
+    {
+        flex-direction: column;
     }
 }
