@@ -5,11 +5,13 @@
     --unhover-text-color: rgb(141, 136, 136);
     --footer-bg:rgb(82, 62, 53);
     --header-bg: #A27E6F;
+    --menu-text-hover: #cf7599;
     --text-hover: #894862;
     --header-separation-line: #1a0516;
     --button-text: #FFF;
     --button-border: #583535;
     --footer-text: #FFF;
+    --menu-bg: #70483c;
 }
 
 a:visited
@@ -59,6 +61,53 @@ header
     box-sizing: border-box;
 }
 
+.menu 
+{
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: var(--menu-bg);
+    width: 45vw;
+    gap: 50px;
+    display: none;
+
+    & > button
+    {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+}
+
+.menunav
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10rem 0;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    font-size: 2.5rem;
+
+    & > a
+    {
+        color: inherit;    
+        text-decoration: none;   
+        font-size: 1.5rem;
+        transition: all 0.1s ease-in;
+
+        &:not(.collaboration):hover
+        {
+            color: var(--menu-text-hover);
+        }
+    }
+}
+
 a img[src*="Logo"] {
     background: none;
     background-color: transparent;
@@ -74,11 +123,10 @@ a img[src*="Logo"] {
     {
         color: inherit;    
         text-decoration: none;   
-        background: transparent;
         font-size: 1.5rem;
         transition: all 0.1s ease-in;
 
-        &:not(#collaboration):hover 
+        &:not(.collaboration):hover 
         {
             color: var(--text-hover);
             transform: translateY(-2px);
@@ -86,7 +134,7 @@ a img[src*="Logo"] {
     }
 }
 
-#collaboration
+.collaboration
 {
     background-color: var(--text-hover);
     padding: 0.5rem 1rem;
@@ -169,20 +217,36 @@ footer
 {
     #hamburger
     {
-        display: inline;
+        display: flex;
+
+        &[aria-expanded="true"] + .menu
+        {
+            display: flex;
+        }
     }
 
     #games, #devlog, #aboutus, #contacts
     {
         display: none;
     }
+
+    .wrapper
+    {
+
+        margin: 0 20px 0 auto; 
+    }
 }
 
 @media (width <= 775px)
 {
-    #collaboration
+    #collaborationdel
     {
         display: none;
+    }
+
+    .menu
+    {
+        width: 100vw;
     }
 
     footer
