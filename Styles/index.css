@@ -1,4 +1,42 @@
 main
 {
     flex: 1;
+    font-family: sans-serif;
+    color: white;
+}
+
+.hero
+{
+    background: radial-gradient(circle at 50% 40%, #2e121d 0%, #0d070b 70%);
+    position: relative;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+    & > h1
+    {
+        font-size: 2.5rem;
+        padding: 2rem;
+    }
+}
+
+.cta
+{
+    display: flex;
+    gap: 50px;
+
+    & > a
+    {
+        color: inherit;    
+        text-decoration: none;   
+        font-size: 2rem;
+        transition: all 0.1s ease-in;
+
+        &:hover
+        {
+            text-decoration: underline;
+            font-family: inherit;
+        }
+    }
 }
