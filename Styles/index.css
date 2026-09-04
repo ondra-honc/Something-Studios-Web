@@ -1,42 +1,55 @@
-main
-{
-    flex: 1;
-    font-family: sans-serif;
-    color: white;
+:root {
+  --hero-bg-circle-middle: #462130;
+  --hero-bg-circle-outer: #7f6052;
+  --font-color: #000;
 }
 
-.hero
-{
-    background: radial-gradient(circle at 50% 40%, #2e121d 0%, #0d070b 70%);
-    position: relative;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    
-    & > h1
-    {
-        font-size: 2.5rem;
-        padding: 2rem;
-    }
+main {
+  flex: 1;
+  font-family: sans-serif;
+  color: var(--font-color);
 }
 
-.cta
-{
-    display: flex;
-    gap: 50px;
-
-    & > a
-    {
-        color: inherit;    
-        text-decoration: none;   
-        font-size: 2rem;
-        transition: all 0.1s ease-in;
-
-        &:hover
-        {
-            text-decoration: underline;
-            font-family: inherit;
-        }
-    }
+.hero {
+  background: radial-gradient(circle at 50% 40%, var(--hero-bg-circle-middle) 0%, var(--hero-bg-circle-outer) 70%);
+  position: relative;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
+.hero > h1 {
+  padding: 2rem;
+}
+
+.cta {
+  display: flex;
+  justify-content: space-between;
+  margin: 17.5vh 5rem 0 5rem;
+}
+.cta > a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: all 0.1s ease-in;
+}
+.cta > a:hover {
+  text-decoration: underline;
+  font-family: inherit;
+}
+
+.right-side {
+  display: inherit;
+  gap: 50px;
+  justify-content: center;
+}
+.right-side > a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: all 0.1s ease-in;
+}
+.right-side > a:hover {
+  text-decoration: underline;
+  font-family: inherit;
+}/*# sourceMappingURL=index.css.map */

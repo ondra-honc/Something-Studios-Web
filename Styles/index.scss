@@ -1,0 +1,64 @@
+:root
+{
+    --hero-bg-circle-middle: #462130;
+    --hero-bg-circle-outer: #7f6052;
+    --font-color: #000;
+}
+
+@mixin button-style()
+{
+    & > a
+    {
+        color: inherit;    
+        text-decoration: none;   
+        font-size: 2rem;
+        transition: all 0.1s ease-in;
+    
+        &:hover
+        {
+            text-decoration: underline;
+            font-family: inherit;
+        }
+    }
+}
+
+main
+{
+    flex: 1;
+    font-family: sans-serif;
+    color: var(--font-color);
+}
+
+.hero
+{
+    background: radial-gradient(circle at 50% 40%, var(--hero-bg-circle-middle) 0%, var(--hero-bg-circle-outer) 70%);
+    position: relative;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+    & > h1
+    {
+        padding: 2rem;
+    }
+}
+
+.cta
+{
+    display: flex;
+    justify-content: space-between;
+    margin: calc(17.5vh) 5rem 0 5rem;
+    
+    @include button-style();
+}
+
+.right-side
+{
+    display: inherit;
+    gap: 50px;
+    justify-content: center;
+    
+
+    @include button-style()
+}
