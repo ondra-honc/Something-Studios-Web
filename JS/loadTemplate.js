@@ -1,9 +1,18 @@
 async function loadTemplate() {
-    try {
-        const pathSegments = window.location.pathname.split('/').filter(Boolean);
-        const isGitHub = window.location.hostname.endsWith('github.io');
-        const basePrefix = (isGitHub && pathSegments.length > 0) ? `/${pathSegments[0]}` : '';
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    const isGitHub = window.location.hostname.endsWith('github.io');
+    const basePrefix = (isGitHub && pathSegments.length > 0) ? `/${pathSegments[0]}` : '';
+    const notFoundUrl = `${basePrefix}/404.html`;
+    const onErrorPage = window.location.pathname.endsWith('/404.html');
 
+    const fail = (reason) => {
+        console.error('Failed to load layout templates:', reason);
+        if (!onErrorPage) {
+            window.location.replace(notFoundUrl);
+        }
+    };
+
+    try {
         const response = await fetch(`${basePrefix}/layout.html`);
         if (!response.ok) throw new Error(`HTTP error status: ${response.status}`);
         const htmlText = await response.text();
@@ -35,18 +44,21 @@ async function loadTemplate() {
             return clone;
         };
 
-        if (headerTemplate) {
-            const headerContainer = document.getElementById('site-header');
-            headerContainer?.replaceWith(processFragment(headerTemplate));
-        }
+        const headerContainer = document.getElementById('site-header');
+        const footerContainer = document.getElementById('site-footer');
 
-        if (footerTemplate) {
-            const footerContainer = document.getElementById('site-footer');
-            footerContainer?.replaceWith(processFragment(footerTemplate));
+        const headerReady = Boolean(headerTemplate && headerContainer);
+        const footerReady = Boolean(footerTemplate && footerContainer);
+
+        if (headerReady && footerReady) {
+            headerContainer.replaceWith(processFragment(headerTemplate));
+            footerContainer.replaceWith(processFragment(footerTemplate));
             window.dispatchEvent(new CustomEvent('layoutLoaded'));
+        } else {
+            fail(`incomplete layout (header: ${headerReady}, footer: ${footerReady})`);
         }
     } catch (error) {
-        console.error('Failed to load layout templates:', error);
+        fail(error);
     }
 }
 
