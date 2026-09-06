@@ -1,5 +1,17 @@
 @use 'variables' as *;
 
+// WebKit / Chromium / Safari
+::-webkit-scrollbar
+{
+    display: none;
+}
+
+// Firefox + standards-track fallback
+html
+{
+    scrollbar-width: none;
+}
+
 :root
 {
     --hero-bg-circle-middle: #462130;
