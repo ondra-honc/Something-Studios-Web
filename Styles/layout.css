@@ -56,15 +56,24 @@ header {
 
 .menu {
   position: fixed;
-  flex-direction: column;
-  align-items: center;
   top: 0;
   right: 0;
+  left: auto;
+  bottom: auto;
+  margin: 0;
+  border: none;
+  padding: 0;
+  overflow: visible;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
   background-color: var(--menu-bg);
   width: 45vw;
   gap: 50px;
   display: none;
+}
+.menu:popover-open {
+  display: flex;
 }
 .menu > button {
   position: absolute;
