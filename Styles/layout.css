@@ -16,6 +16,12 @@ html:has(.menu:popover-open) {
   overflow: hidden;
 }
 
+#mobile-menu::backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
 a:visited {
   color: inherit;
 }
