@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 :root
 {
     --hero-bg-circle-middle: #462130;
@@ -56,13 +58,13 @@ main
     
     @include button-style();
 
-    @container (width <= 600px)
+    @container (width <= #{$hero-cta-stack-breakpoint})
     {
         flex-direction: column;
         gap: 5rem;
     }
 
-    @container (width <= 400px)
+    @container (width <= #{$hero-cta-condense-breakpoint})
     {
         margin-top: 2rem;
     }
