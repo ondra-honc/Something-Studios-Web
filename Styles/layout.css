@@ -226,14 +226,14 @@ footer {
   #logo img {
     width: 200px;
     height: auto;
-    content: url(/Logos/Main-Logo-cropped.svg);
+    content: url(../../Logos/Main-Logo-cropped.svg);
   }
 }
 @media (width <= 360px) {
   .left-part img {
     width: 200px;
     height: auto;
-    content: url(/Logos/Main-Logo-cropped-inverted.svg);
+    content: url(../../Logos/Main-Logo-cropped-inverted.svg);
   }
   .page-links, .game-links {
     flex-direction: column;
