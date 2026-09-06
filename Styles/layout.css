@@ -36,6 +36,16 @@ html:has(.menu:popover-open) {
     background: rgba(0, 0, 0, 0);
   }
 }
+#backarrow {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#backarrow:hover {
+  transform: rotate(180deg) scale(1.05);
+}
+
 a:visited {
   color: inherit;
 }
