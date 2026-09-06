@@ -20,6 +20,14 @@ html:has(.menu:popover-open) {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   background: rgba(0, 0, 0, 0.3);
+  transition: backdrop-filter 0.3s ease, background 0.3s ease, overlay 0.3s ease allow-discrete, display 0.3s ease allow-discrete;
+}
+@starting-style {
+  #mobile-menu::backdrop {
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    background: rgba(0, 0, 0, 0);
+  }
 }
 
 a:visited {
@@ -80,10 +88,16 @@ header {
   background-color: var(--menu-bg);
   width: 45vw;
   gap: 50px;
-  display: none;
+  transform: translateX(100%);
+  transition: transform 0.3s ease, overlay 0.3s ease allow-discrete, display 0.3s ease allow-discrete;
 }
 .menu:popover-open {
-  display: flex;
+  transform: translateX(0);
+}
+@starting-style {
+  .menu:popover-open {
+    transform: translateX(100%);
+  }
 }
 .menu > button {
   position: absolute;
