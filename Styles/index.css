@@ -16,7 +16,9 @@ main {
   height: 80vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   overflow: hidden;
+  container-type: inline-size;
 }
 .hero > h1 {
   padding: 2rem;
@@ -26,16 +28,29 @@ main {
   display: flex;
   justify-content: space-between;
   margin: 17.5vh 5rem 0 5rem;
+  gap: 20rem;
 }
 .cta > a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: transparent;
   font-size: 2rem;
-  transition: all 0.1s ease-in;
+  transition: 0.1s ease-in;
 }
 .cta > a:hover {
-  text-decoration: underline;
+  text-decoration-color: currentColor;
   font-family: inherit;
+}
+@container (width <= 600px) {
+  .cta {
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
+@container (width <= 400px) {
+  .cta {
+    margin-top: 2rem;
+  }
 }
 
 .right-side {
@@ -45,11 +60,12 @@ main {
 }
 .right-side > a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: transparent;
   font-size: 2rem;
-  transition: all 0.1s ease-in;
+  transition: 0.1s ease-in;
 }
 .right-side > a:hover {
-  text-decoration: underline;
+  text-decoration-color: currentColor;
   font-family: inherit;
 }/*# sourceMappingURL=index.css.map */
