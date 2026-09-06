@@ -12,6 +12,10 @@
   --menu-bg: #70483c;
 }
 
+html:has(.menu:popover-open) {
+  overflow: hidden;
+}
+
 a:visited {
   color: inherit;
 }
