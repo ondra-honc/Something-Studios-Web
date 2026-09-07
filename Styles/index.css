@@ -94,8 +94,10 @@ main {
   display: flex;
   gap: 2rem;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  scrollbar-width: none;
   padding-left: calc(50% - 15vh);
   padding-right: calc(50% - 15vh);
   box-sizing: border-box;
