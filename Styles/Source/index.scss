@@ -110,12 +110,16 @@ main
 
 .cards
 {
-    align-items: center;
-    overflow-x: auto;
     display: flex;
     gap: 2rem;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+
+    padding-left: calc(50% - 15vh);
+    padding-right: calc(50% - 15vh);
+    
+    box-sizing: border-box;
 }
 
 .news-card
@@ -125,9 +129,9 @@ main
     border-radius: 3vh;
     margin-left: 1rem;
     height: 30vh;
-    width: 30vh;
+    width: 20vw;
     flex-shrink: 0;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     background-color: var(--news-card-bg);
 
     & > figure {
@@ -147,5 +151,13 @@ main
         {
             word-wrap: break-word;
         }
+    }
+}
+
+@media (width <= #{$header-nav-hamburger-breakpoint})
+{
+    .news-card
+    {
+        width: 220px;
     }
 }
