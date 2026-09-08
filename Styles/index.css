@@ -1,7 +1,3 @@
-:root {
-  --news-card-bg: rgb(78, 60, 60);
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -14,6 +10,7 @@ html {
   --hero-bg-circle-middle: #462130;
   --hero-bg-circle-outer: #7f6052;
   --font-color: #000;
+  --news-card-bg: rgb(78, 60, 60);
 }
 
 main {
