@@ -218,3 +218,12 @@ main
         width: 220px;
     }
 }
+
+@media (width <= #{$hero-cta-condense-breakpoint})
+{
+    .career-button-wrapper
+    {
+        flex-direction: column;
+        gap: 25px;
+    }
+}

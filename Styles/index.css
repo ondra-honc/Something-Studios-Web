@@ -177,4 +177,10 @@ main {
   .news-card {
     width: 220px;
   }
+}
+@media (width <= 400px) {
+  .career-button-wrapper {
+    flex-direction: column;
+    gap: 25px;
+  }
 }/*# sourceMappingURL=index.css.map */
