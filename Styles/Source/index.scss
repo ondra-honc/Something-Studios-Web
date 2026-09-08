@@ -1,10 +1,5 @@
 @use 'variables' as *;
 
-:root
-{
-    --news-card-bg: rgb(78, 60, 60);
-}
-
 // WebKit / Chromium / Safari
 ::-webkit-scrollbar
 {
@@ -22,6 +17,7 @@ html
     --hero-bg-circle-middle: #462130;
     --hero-bg-circle-outer: #7f6052;
     --font-color: #000;
+    --news-card-bg: rgb(78, 60, 60);
 }
 
 @mixin button-style()
