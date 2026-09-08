@@ -368,3 +368,21 @@ footer
         flex-direction: column;
     }
 }
+
+@media (height <= #{$short-screen-breakpoint})
+{
+    .menunav
+    {
+        padding: 4rem 0 2rem 0;
+        gap: 20px;
+        overflow-y: auto;
+    }
+}
+
+@media (height <= #{$compact-height-breakpoint}) {
+    .menunav
+    {
+        padding: 2rem 0;
+        gap: 12px;
+    }
+}

@@ -227,3 +227,37 @@ main
         gap: 25px;
     }
 }
+
+@media (height <= #{$short-screen-breakpoint})
+{
+    .hero
+    {
+        height: auto;
+        min-height: 350px;
+        padding-bottom: 3rem;
+    }
+
+    .cta
+    {
+        margin-top: 2rem;
+        gap: 5rem;
+    }
+
+    .news
+    {
+        height: auto;
+        padding: 2rem 0;
+    }
+
+    .news-card
+    {
+        height: 220px;
+        min-width: 200px;
+    }
+
+    .career
+    {
+        height: auto;
+        padding: 3rem 1rem;
+    }
+}

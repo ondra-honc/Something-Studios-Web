@@ -183,4 +183,27 @@ main {
     flex-direction: column;
     gap: 25px;
   }
+}
+@media (height <= 650px) {
+  .hero {
+    height: auto;
+    min-height: 350px;
+    padding-bottom: 3rem;
+  }
+  .cta {
+    margin-top: 2rem;
+    gap: 5rem;
+  }
+  .news {
+    height: auto;
+    padding: 2rem 0;
+  }
+  .news-card {
+    height: 220px;
+    min-width: 200px;
+  }
+  .career {
+    height: auto;
+    padding: 3rem 1rem;
+  }
 }/*# sourceMappingURL=index.css.map */

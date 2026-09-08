@@ -286,4 +286,17 @@ footer {
   .page-links, .game-links {
     flex-direction: column;
   }
+}
+@media (height <= 650px) {
+  .menunav {
+    padding: 4rem 0 2rem 0;
+    gap: 20px;
+    overflow-y: auto;
+  }
+}
+@media (height <= 500px) {
+  .menunav {
+    padding: 2rem 0;
+    gap: 12px;
+  }
 }/*# sourceMappingURL=layout.css.map */
