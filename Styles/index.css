@@ -10,6 +10,7 @@ html {
   --hero-bg-circle-middle: #462130;
   --hero-bg-circle-outer: #7f6052;
   --font-color: #000;
+  --news-font-color: #FFF;
   --news-card-bg: rgb(78, 60, 60);
 }
 
@@ -95,6 +96,7 @@ main {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  color: var(--news-font-color);
   padding-left: calc(50% - 15vh);
   padding-right: calc(50% - 15vh);
   box-sizing: border-box;
