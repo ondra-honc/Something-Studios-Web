@@ -18,7 +18,12 @@ html
     --hero-bg-circle-outer: #7f6052;
     --font-color: #000;
     --news-font-color: #FFF;
+    --career-button-font-color: #FFF;
     --news-card-bg: rgb(78, 60, 60);
+    --career-heading-span: #b86686;
+    --career-border-top: black;
+    --career-cta-bg: rgb(107, 90, 90);
+    --career-cta-gradient-end: rgb(77, 62, 62);
 }
 
 @mixin button-style()
@@ -150,6 +155,58 @@ main
         & > figcaption
         {
             word-wrap: break-word;
+        }
+    }
+}
+
+.career
+{
+    height: 50vh;
+    border-top: solid 2px var(--career-border-top);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & > p, & > h2
+    {
+        text-align: center;
+        text-wrap: balance;
+    }
+    
+    & > p
+    {
+        font-size: 20px;
+    }
+    
+    & > h2
+    {
+        font-size: 40px;
+
+        & > span
+        {
+            color: var(--career-heading-span);
+        }
+    }
+}
+
+.career-button-wrapper
+{
+    display: flex;
+    gap: 50px;
+
+    & > a
+    {
+        text-decoration: none;
+        padding: 1rem 2rem;
+        color: var(--career-button-font-color);
+        background: linear-gradient(to right, var(--career-cta-bg) 60%, var(--career-cta-gradient-end));
+        border-radius: .75rem;
+        transition: all 0.1s ease-in;
+        
+        &:hover
+        {
+            transform: scale(1.1);
         }
     }
 }
