@@ -1,0 +1,56 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  font-family: "New Rocker", system-ui;
+  padding: 2rem;
+}
+.error-page .error-content {
+  max-width: 600px;
+}
+.error-page .error-content h1 {
+  font-size: 8rem;
+  margin: 0;
+  color: var(--hero-bg-circle-outer);
+  line-height: 1;
+}
+.error-page .error-content h2 {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+.error-page .error-content p {
+  font-size: 1.25rem;
+  margin: 1.5rem 0 2rem;
+  opacity: 0.8;
+}
+.error-page .error-content .btn-primary {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background-color: #462130;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.error-page .error-content .btn-primary:hover {
+  transform: translateY(-2px);
+  background-color: #7f6052;
+}/*# sourceMappingURL=404.css.map */
