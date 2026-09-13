@@ -3,6 +3,9 @@ window.addEventListener('layoutLoaded', () => {
 
     if (cardsContainer) {
         cardsContainer.addEventListener('wheel', (event) => {
+            const hasOverflow = cardsContainer.scrollWidth > cardsContainer.clientWidth;
+            if (!hasOverflow) return;
+
             event.preventDefault();
 
             const card = cardsContainer.querySelector('.news-card');
