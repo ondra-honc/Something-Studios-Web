@@ -13,9 +13,10 @@ main {
 
 .hero {
   margin: 10rem;
+  min-width: 340px;
 }
 .hero > h1, .hero > h2 > a {
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-decoration: none;
   transition: all 0.05s ease-in;
 }
@@ -28,4 +29,24 @@ main {
 .hero > h2 > a:hover {
   text-decoration-color: currentColor;
   font-family: inherit;
+}
+
+@media (width <= 1100px) {
+  main {
+    display: flex;
+    justify-content: center;
+  }
+  main .hero h1, main .hero h2, main .hero a {
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+}
+@media (width <= 580px) {
+  .hero {
+    margin: 2rem;
+    min-width: 270px;
+  }
+  .hero > h1, .hero > h2 > a {
+    font-size: 2rem;
+  }
 }/*# sourceMappingURL=contacts.css.map */

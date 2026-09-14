@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 :root
 {
     --text-color: #000;
@@ -17,10 +19,11 @@ main
 .hero
 {
     margin: 10rem;
+    min-width: 340px;;
 
     & > h1, & > h2 > a
     {
-        font-size: 3rem;
+        font-size: 2.5rem;
         text-decoration: none;
         transition: all 0.05s ease-in;
     }
@@ -37,5 +40,37 @@ main
     {
         text-decoration-color: currentColor;
         font-family: inherit;
+    }
+}
+
+@media (width <= #{$header-nav-hamburger-breakpoint})
+{
+    main
+    {
+        display: flex;
+        justify-content: center;
+
+        .hero
+        {
+            h1, h2, a
+            {
+                word-wrap: break-word;
+                word-break: break-word; 
+            }
+        }
+    }
+}
+
+@media (width <= #{$header-img-swap-breakpoint})
+{
+    .hero
+    {
+        margin: 2rem;
+        min-width: 270px;
+
+        & > h1, & > h2 > a
+        {
+            font-size: 2rem;
+        }
     }
 }
